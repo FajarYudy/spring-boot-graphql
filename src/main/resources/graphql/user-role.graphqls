@@ -1,0 +1,20 @@
+type UserRole {
+    id: ID
+    name: String
+}
+
+extend type Query {
+    userRoles: [UserRole]
+    userRoleById(id:ID): UserRole
+}
+
+extend type Mutation {
+    addOrEditUserRole(userRole: userRoleInput): UserRole
+    deleteUserRoleById(id:ID): UserRole
+}
+
+input userRoleInput {
+    id: ID
+    name: String
+}
+

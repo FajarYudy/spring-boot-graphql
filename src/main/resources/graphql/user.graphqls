@@ -1,0 +1,26 @@
+type Query {
+    users: [User]
+    userById(id:ID): User
+}
+
+# Root
+type Mutation {
+    addOrEditUser(user: userInput): User
+    deleteUserById(id:ID): User
+}
+
+# Root
+input userInput {
+    id: Int
+    username: String
+    email: String
+    password: String
+}
+
+type User {
+    id: ID
+    username: String
+    email: String
+    password: String
+    userRole: UserRole
+}
